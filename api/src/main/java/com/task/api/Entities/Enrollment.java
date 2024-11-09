@@ -8,7 +8,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Enrollment {
+public class Enrollment 
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

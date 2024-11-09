@@ -2,6 +2,8 @@ package com.task.api.Entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 @Entity
-public class Course {
+public class Course 
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,7 +57,19 @@ public class Course {
         return description;
     }
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "courses")
     private List<Student> students;
-    
+
+    public void setStudents(List<Student> students)
+    {
+        this.students = students;
+    }
+
+    public List<Student> getStudents()
+    {
+        return students;
+    }
+
 }
+
