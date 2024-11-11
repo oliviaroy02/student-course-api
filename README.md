@@ -1,4 +1,4 @@
-# student-course-api
+# Student-Course-API
 
 # Overview
   This project is a Spring Boot based REST API for managing student-course enrollments. It allows users to add students and courses, 
